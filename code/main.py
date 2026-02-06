@@ -21,6 +21,8 @@ while running:
 
     level.run()
     pygame.display.update()
+
+    #Test to kill enemy (will be removed)
     keys = pygame.key.get_pressed()
     if keys[pygame.K_l]:
         for sprite in level.visible_sprites:
