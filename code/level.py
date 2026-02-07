@@ -25,15 +25,15 @@ class Level:
         layouts = {
             'surface': import_csv_layout('../levels/0/lvl_mvp_surface.csv'),
             'dirt': import_csv_layout('../levels/0/lvl_mvp_dirt.csv'),
-            'bridge_side': import_csv_layout('../levels/0/lvl_mvp_bridge_side.csv'),
-            'bridge_top': import_csv_layout('../levels/0/lvl_mvp_bridge_top.csv')
+            'platform_side': import_csv_layout('../levels/0/lvl_mvp_bridge_side.csv'),
+            'platform_top': import_csv_layout('../levels/0/lvl_mvp_bridge_top.csv')
         }
 
         graphics = {
             'surface': import_folder('../graphics/deepcave_single_tiles/surface'),
             'dirt': import_folder('../graphics/deepcave_single_tiles/dirt'),
-            'bridge_side': import_folder('../graphics/deepcave_single_tiles/bridge_side'),
-            'bridge_top': import_folder('../graphics/deepcave_single_tiles/bridge_top'),
+            'platform_side': import_folder('../graphics/deepcave_single_tiles/platform_side'),
+            'platform_top': import_folder('../graphics/deepcave_single_tiles/platform_top'),
         }
 
         for style, layout in layouts.items():
@@ -49,12 +49,12 @@ class Level:
                         if style == 'dirt':
                             dirt = graphics['dirt'][int(col)]
                             Tiles((x,y), [self.visible_sprites, self.obstacle_sprites], 'dirt', surface=dirt)
-                        if style == 'bridge_side':
-                            b_side = graphics['bridge_side'][int(col)]
-                            Tiles((x,y), [self.visible_sprites], 'bridge_side', surface=b_side)
-                        if style == 'bridge_top':
-                            b_top = graphics['bridge_top'][int(col)]
-                            Tiles((x,y), [self.visible_sprites, self.obstacle_sprites], 'bridge_top', surface=b_top)
+                        if style == 'platform_side':
+                            plat_side = graphics['platform_side'][int(col)]
+                            Tiles((x,y), [self.visible_sprites], 'platform_side', surface=plat_side)
+                        if style == 'platform_top':
+                            plat_top = graphics['platform_top'][int(col)]
+                            Tiles((x,y), [self.visible_sprites, self.obstacle_sprites], 'platform_top', surface=plat_top)
 
         self.player = Player((700, 500), [self.visible_sprites], self.obstacle_sprites)
 

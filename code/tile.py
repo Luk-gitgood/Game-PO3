@@ -12,8 +12,8 @@ class Tiles(pygame.sprite.Sprite):
 
         if self.sprite_type == 'surface':
             self.hitbox = self.rect.inflate(-30, -30)
-        elif self.sprite_type == 'bridge_top':
-            self.hitbox = self.rect.inflate(-10, -30)
+        elif self.sprite_type == 'platform_top':
+            self.hitbox = self.rect.inflate(-24, -30)
         else:
             self.hitbox = self.rect.inflate(0,0)
 
